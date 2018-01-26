@@ -4,8 +4,8 @@ from app import app
  #view
 @app.route('/')
 def index():
-    message = 'Hello-Welcome to news site'
-    return render_template('index.html',message = message)
+    title = 'Hello-Welcome to news site'
+    return render_template('index.html',message = title)
 
 @app.route('/news/<int:news_id>')
 def news(news_id):
