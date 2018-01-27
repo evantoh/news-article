@@ -8,11 +8,11 @@ api_key = app.config['NEWS_API_KEY']
 
 source_url = app.config["SOURCE_API_BASE_URL"]
 
-def get_sources(language):
+def get_sources():
     '''
     function that gets the json response to our url request
     '''
-    get_sources_url = source_url.format(language)
+    get_sources_url = source_url.format(api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_source_data = url.read()
@@ -20,7 +20,7 @@ def get_sources(language):
 
         source_results = None
 
-        if get_source_response['results']:
+        if get_source_response['sources']:
                 source_results_list = get_source_response['sources']
 
                 source_results = process_source_results(source_results_list)

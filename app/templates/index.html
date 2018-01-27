@@ -5,15 +5,15 @@
     {% if message %}
     <title> {{ message }}</title>
     {% else %}
-    <title> Welcome to the best movie Review Website</title>
+    <title> Welcome to the best news  Website</title>
     {% endif %}
 </head>
 <body>
-            <!-- Popular sources  -->
-            <h3> Popular nes</h3>
+        
+            <h3> News sources</h3>
             <ul>
-               {% for popular_source in id %}
-                   <li>{{ popular_source.id}}</li>
+               {% for sources in sources %}
+                   <li> {{ sources.id }} </li>
                {% endfor %}
            </ul>
     
