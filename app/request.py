@@ -6,28 +6,28 @@ Source = source.Source
 #getting api key
 api_key = app.config['NEWS_API_KEY']
 
-base_url = app.config["SOURCE_API_BASE_URL"]
+source_url = app.config["SOURCE_API_BASE_URL"]
 
-def get_news(category,api_key):
+def get_sources(language):
     '''
     function that gets the json response to our url request
     '''
-    get_news_url = base_url.format(category,api_key)
+    get_sources_url = source_url.format(language)
 
-    with urllib.request.urlopen(get_news_url) as url:
-        get_news_data = url.read()
-        get_news_response = json.loads(get_news_data)
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_source_data = url.read()
+        get_source_response = json.loads(get_source_data)
 
-        news_results = None
+        source_results = None
 
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
+        if get_source_response['results']:
+                source_results_list = get_source_response['sources']
 
-            news_results = process_results(news_results_list)
+                source_results = process_source_results(source_results_list)
 
-    return news_results
+    return source_results
 
-def process_results(news_list):
+def process_source_results(source_list):
         '''
         function that proceses the news results and transform them to
          a list of objects
@@ -36,23 +36,24 @@ def process_results(news_list):
         Returns:
         new_results: a list of movie objects
         '''
-        news_results = []
-        for news_item in news_list:
-            author =news_item.get('author')
-            title = news_item.get('title')
-            description = news_item.get('description')
-            url = news_item.get('url')
-            urlToImage= news_item.get('urlToImage')
-            publishedAt = news_item.get('publishedAt')
+        source_results = []
+        for source_item in source_list:
+            id =source_item.get('id')
+            name = source_item.get('name')
+            description = source_item.get('description')
+            source = source_item.get('source')
+            category= source_item.get('category')
+          
+            
             
 
             
-            news_object =News(author,title,description,url,urlToImage,publishedAt)
-            news_results.append(news_object)
+            source_object =Source(id,name,description,source,category)
+            source_results.append(source_object)
 
-        return news_results 
+        return source_results 
     
-
+  
 
 
 

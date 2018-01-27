@@ -1,14 +1,14 @@
 from flask  import render_template
 from app import app
-from .request import get_news
+from .request import get_sources
  
  #view
 @app.route('/')
 def index():
-    popular_news = get_news('country','category')
-    print(popular_news)
+    # popular_sources = get_sources('id','api_key')
+    # print(popular_sources)
     title = 'Hello-Welcome to news site'
-    return render_template('index.html',message = title,popular =popular_news)
+    return render_template('index.html',message = title)
 
 @app.route('/news/<int:news_id>')
 def news(news_id):
