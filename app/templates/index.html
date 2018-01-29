@@ -1,46 +1,38 @@
+{% import 'base.html'%}
 {% import 'macros.html' as macro%}
-<html>
-<head>
-    <meta charset="utf-8" />
-    {% if message %}
-    <title> {{ message }}</title>
-    {% else %}
-    <title> Welcome to the best news  Website</title>
-    {% endif %}
-</head>
-<body>
+{ % block content %}
+
     <div>
             <ul>
                     <h3> GENERAL NEWS</h3>
-             
-                   {{ macro.displayNewsList(general)}}
+            
+                {{ macro.displayNewsList(general)}}
             </ul>
-       
+    
     </div>
     <div>
             <ul>
                     <h3> HEALTH NEWS</h3>
-             
-                   {{ macro.displayNewsList(health)}}
+            
+                {{ macro.displayNewsList(health)}}
             </ul>
-       
+    
     </div>
     <div>
             <ul>
                     <h3> TECHNOLOGY NEWS</h3>
-             
-                   {{ macro.displayNewsList(technology)}}
+            
+                {{ macro.displayNewsList(technology)}}
             </ul>
-       
+    
     </div>
     <div>
             <ul>
-                    <h3> BUSINESS NEWS</h3>
-             
-                   {{ macro.displayNewsList(business)}}
+                <h3> BUSINESS NEWS</h3>
+            
+                {{ macro.displayNewsList(business)}}
             </ul>
-       
-    </div>
     
-</body>
-</html>
+    </div>
+{% endblock%}
+    
