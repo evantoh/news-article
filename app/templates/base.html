@@ -1,0 +1,19 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    {% if message %}
+    <title> {{ message }}</title>
+    {% else %}
+    <title> Welcome to the best news  Website</title>
+    {% endif %}
+</head>
+<body>
+    <!-- Content block -->
+
+    {% block content %}
+
+    {% endblock%}
+    
+</body>
+</html>
