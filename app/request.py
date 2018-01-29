@@ -21,9 +21,9 @@ def get_sources(category):
         #
 
         if get_source_response['articles']:
-                source_results_list = get_source_response['articles']
+            source_results_list = get_source_response['articles']
 
-                source_results = process_source_results(source_results_list)
+            source_results = process_source_results(source_results_list)
 
     return source_results
 
@@ -38,6 +38,8 @@ def process_source_results(source_list):
         '''
         source_results = []
         for source_item in source_list:
+           
+            # author = source_item('author')
             title=source_item.get('title')
             urlToImage=source_item.get('urlToImage')
             description=source_item.get('description')
@@ -49,7 +51,7 @@ def process_source_results(source_list):
 
             if url:
              
-                source_object =Source(title,urlToImage,description,url,publishedAt)
+                source_object =Source(title,description,url,urlToImage,publishedAt)
                 source_results.append(source_object)
 
         return source_results 

@@ -2,12 +2,11 @@ class Source:
     '''
     class that handles sources 
     '''
-    def __init__(self,id,name,description,source,category):
-        self.id = id
-        self.name = name
+    def __init__(self,title,description,url,urlToImage,publishedAt):
+        
+        self.title = title
         self.description = description
-        self.source = source
-        self.category = category
-        # self.language = language
-        # self.country = country
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
        
