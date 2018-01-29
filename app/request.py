@@ -73,7 +73,7 @@ def get_news(source):
                 
                 
                 news_object = Source(title,description,url,urlToImage,publishedAt)
-    
+                return news_object
   
 
 
