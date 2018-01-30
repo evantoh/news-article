@@ -6,11 +6,12 @@
 ## Description
  This application will show the user the current news on the go. The user will choose the source of the news e.g CNN and will see all the current news under that source. The user can choose to go into details by clicking on the available url to find more about a particular article
 
-Setup/Installation Requirements Clone the repository install pyperclip $ python3.6 -m pip install pyperclip open terminal and go to the project folder, run $ ./run.py Known Bugs This will be updated as the app goes on. If you find any bug please notify through this link.30/1/2018
+.30/1/2018
 
 ## Setup/Installation Requirements
 * internet connection
 * web-browser chrome most preferable
+*Setup/Installation Requirements Clone the repository install pyperclip $ python3.6 -m pip install pyperclip open terminal and go to the project folder, run $ ./run.py Known Bugs This will be updated as the app goes on.
 
 
 ## Known Bugs
