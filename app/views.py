@@ -1,17 +1,35 @@
-from flask  import render_template
+from flask import render_template
 from app import app
 from .request import get_sources
- 
- #view
+
+#  Views
+
+
 @app.route('/')
 def index():
-    sports = get_sources('us','sports')
-  
-    title='Home - welcome to top headlines'
-    return render_template('index.html', sports = sports)
+    """
+    Function that returns the index page and its data
+    Example call
+    top_headlines = get_sources('de','business')
+    We can also have a get_all() function that gets all the news
+    Example call from views would be
+    everything
+    """
+    general_list = get_sources('us', 'general')
+    business_list = get_sources('us', 'business')
+    sports_list = get_sources('us', 'sports')
+    entertainment_list = get_sources('us', 'entertainment')
+    test_args = 'Working!'
+    return render_template('index.html',test_param=test_args,general=general_list,business=business_list,sports=sports_list, entertainment=entertainment_list)
+                           
+                          
+                          
+
 
 @app.route('/articles/<highlight>')
 def articles(highlight):
-    test_highlight ='they are ok'
-    
-    return render_template('source.html', highlights =test_highlight)
+    """
+    View articles page that returns the news article from a highlight
+    """
+    title= 'Route Working!!'
+    return render_template('article.html', title=title)
