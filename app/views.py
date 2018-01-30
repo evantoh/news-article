@@ -15,14 +15,12 @@ def index():
     Example call from views would be
     everything
     """
-    general_list = get_sources('us', 'business')
+    general_list = get_sources('us', 'sports')
     # business_list = get_sources('us', 'business')
     # sports_list = get_sources('us', 'sports')
-    # entertainment_list = get_sources('us', 'entertainment')
+    entertainment_list = get_sources('us', 'entertainment')
     test_args = 'Working!'
-    return render_template('index.html',
-                           test_param=test_args,
-                           general=general_list)
+    return render_template('index.html',test_param=test_args,general=general_list)
 
     # return render_template('index.html',
     #                        test_param=test_args,
