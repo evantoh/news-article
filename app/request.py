@@ -1,6 +1,5 @@
 from app import app
-import urllib.request
-import json
+import urllib.request,json
 from .models import news_source
 from .models import news_article
 
@@ -18,7 +17,7 @@ base_url = app.config['BASE_NEWS_API_URL']
 source_url = app.config['SOURCE_NEWS_URL']
 
 
-def get_sources(coutry, category):
+def get_sources(coutry,category):
     """
     Function that gets the json response to our url request
     """
@@ -26,8 +25,7 @@ def get_sources(coutry, category):
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
-        # print(get_news_response)
-        # get_news_response is now a dictionary because of the json.loads()
+       
 
         source_results = None
 
@@ -47,7 +45,6 @@ def process_sources(source_list):
     news_results = []
     for source in source_list:
         id = source.get('id')
-        print(id)
         name = source.get('name')
         print(name)
         description = source.get('description')
@@ -73,8 +70,7 @@ def get_articles(id):
     with urllib.request.urlopen(get_source_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
-        # print(get_news_response)
-        # get_news_response is now a dictionary because of the json.loads()
+       
 
         news_results = None
 
@@ -92,16 +88,8 @@ def process_articles(articles_list):
     We process results will transform our dictionary into a list of objects.
     """
     news_results = []
-    source_dictionary = {}
-    for result in articles_list:
-        # We store the nested dictionary in source_id
-        source_id = result['source']
-        # We extract and store it in our source_dictionary
-        source_dictionary['id'] = source_id['id']
-        source_dictionary['name'] = source_id['name']
-        id = source_dictionary['id']
-        name = source_dictionary['name']
 
+    for result in articles_list:
         author = result.get('author')
         title = result.get('title')
         description = result.get('description')
@@ -110,8 +98,8 @@ def process_articles(articles_list):
         publishedAt = result.get('publishedAt')
 
         if urlToImage:
-            print(id)
-            source_object = Articles(id,name,author,title,description,url,urlToImage,publishedAt)
+        
+            source_object = Articles(author,title,description,url,urlToImage,publishedAt)
             news_results.append(source_object)
 
     return news_results
