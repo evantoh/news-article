@@ -2,7 +2,7 @@
 {% macro displaySourceList(source_list) %}
  {% for source in source_list %}
 <div class="col-sm-3">
-  <a href="/news/{{source.id}}">{{source.name}}</a>
+  <a href="/news/{{source.id}}">{{source.name}} {{source.urlToImage}}</a>
 </div>
 {% endfor %} {% endmacro %} {% macro displayArticleList(articles_list) %} {% for article in articles_list %}
 <div class="col-sm-4">
