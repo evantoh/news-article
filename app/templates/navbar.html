@@ -1,18 +1,21 @@
-<div class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/"> Watchlist </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-            </div>
+{% import 'macros.html' as macro %}
+<nav class="navbar navbar-expand-lg navbar navbar-inverse bg-inverse mb-5">
+  <a class="navbar-brand" href="/">News Sources</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        </div>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    
+        </a>
+        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/">HOME!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
