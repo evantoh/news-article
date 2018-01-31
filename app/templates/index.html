@@ -1,94 +1,83 @@
 {% extends 'base.html' %} 
 {% import 'macros.html' as macro %} 
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/navbar.css')}}">
+{% endblock %}
 {% block content %}
-<div class="text-align-center">
-  <h1 style="text-align:center">WELCOME TO NEWS SOURCES</h1>
-
-</div>
-<div class="container">
-
-  <div class="tabs">
- <div class="row">
- <div class="col-md-2">
-    <h3> Technology</h3>
-  </div>
-  <div class="col-md-10">
-    <!-- technology  section  -->
-    <ul>
-      {{ macro.displaySourceList(technology)}}
-    </ul>
-  </div>
-</div>
-</div>
-
-<hr>
-<br>
-
-
-<div class="tabs">
-<div class="row">
-<div class="col-xs-2">
-  <h3> Entertainment News</h3>
-</div>
-<div class="col-xs-10">
-    <!-- entertainment  section  -->
-      <ul>
-       {{ macro.displaySourceList(entertainment)}}
-     </ul>
-   </div>
- </div>
- </div>
-
- <hr>
- <br>
-
- <div class="tabs">
- <div class="row">
- <div class="col-md-2">
-      <!-- health  section  -->
-     <h3> health News</h3>
-     </div>
-     <div class="col-md-10">
-      <ul>
-          {{ macro.displaySourceList(health)}}
-     </ul>
-   </div>
- </div>
- </div>
-
- <hr>
- <br>
-
- <div class="tabs">
- <div class="row">
- <div class="col-md-2">
-     <!-- sience  section  -->
-     <h3> science News</h3>
-     </div>
-     <div class="col-md-10">
-      <ul>
-        {{ macro.displaySourceList(science)}}
-     </ul>
-   </div>
- </div>
- </div>
-
- <hr>
- <br>
-
- <div class="tabs">
- <div class="row">
- <div class="col-md-2">
-     <!-- sports  section  -->
-     <h3> sport News</h3>
-   </div>
-   <div class="col-md-10">
-      <ul>
-            {{ macro.displaySourceList(sports)}}
-      </ul>
+<div class="jumbotron"> 
+  <div class="container">
+    <div class="tabs">
+        <div class="row">
+          <div class="col-md-2">
+              <h3> TECHNOLOGY</h3>
+            </div>
+            <div class="col-md-10">
+              <!-- technology  section  -->
+                {{ macro.displaySourceList(technology)}}
+              
+            </div>
+        </div>
     </div>
+    <hr>
+  
+    <div class="tabs">
+      <div class="row">
+        <div class="col-md-2">
+          <h3> ENTERTAINMENT NEWS</h3>
+        </div>
+        <div class="col-md-10">
+            <!-- entertainment  section  -->
+              {{ macro.displaySourceList(entertainment)}}
+            
+          </div>
+      </div>
+    </div>
+    <hr>
+    <div class="tabs">
+      <div class="row">
+        <div class="col-md-2">
+              <!-- health  section  -->
+            <h3> HEALTH NEWS</h3>
+        </div>
+            <div class="col-md-10">
+             {{ macro.displaySourceList(health)}}
+          </div>
+      </div>
+    </div>
+    <hr>
+    
+    <div class="tabs">
+      <div class="row">
+        <div class="col-md-2">
+            <!-- sience  section  -->
+            <h3> SCIENCE NEWS</h3>
+        </div>
+          <div class="col-md-10">
+                {{ macro.displaySourceList(science)}}
+          </div>
+      </div>
+    </div>
+    <hr>
+    
+    
+    <div class="tabs">
+      <div class="row">
+        <div class="col-md-2">
+            <!-- sports  section  -->
+            <h3> SPORTS NEWS</h3>
+          </div>
+          <div class="col-md-10">
+              
+             {{ macro.displaySourceList(sports)}}
+            
+          </div>
+        </div>
+      </div>
+  
   </div>
-  </div>
-
 </div>
+
 {% endblock%}
