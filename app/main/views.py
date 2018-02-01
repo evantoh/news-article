@@ -1,10 +1,11 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from app import app
-from .request import get_sources, get_articles
+from . import main
+from ..request import get_sources, get_articles
 
 
 
-@app.route('/')
+@main.route('/')
 def index():
     general_list = get_sources('us', 'general')
     business_list = get_sources('us', 'business')
@@ -18,7 +19,7 @@ def index():
 health=health_list,science=science_list,entertainment=entertainment_list)
 
 
-@app.route('/news/<id>')
+@main.route('/news/<id>')
 def news(id):
     
     news_args = get_articles(id)
